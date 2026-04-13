@@ -1,0 +1,115 @@
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #121212;
+    color: white;
+}
+
+/* LOGIN */
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-box {
+    background: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+input {
+    display: block;
+    margin: 10px auto;
+    padding: 8px;
+}
+
+/* HEADER */
+header {
+    background: #1f1f1f;
+    padding: 15px;
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    list-style: none;
+}
+
+/* PRODUCTOS */
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: #1f1f1f;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    width: 200px;
+    min-height: 260px;
+}
+
+button {
+    background: #00ff99;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+}
+
+/* CARRITO */
+.carrito {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background: #222;
+    padding: 15px;
+}
+
+.oculto {
+    display: none;
+}
+li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+li button {
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.card h3 {
+    font-size: 15px;
+    word-break: break-word;
+    white-space: normal;
+}
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+ul {
+  margin-left: 20px;
+}

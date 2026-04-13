@@ -2,10 +2,80 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>GameStore</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Bienvenido a mi primera pag web</h1>
+
+<script>
+// PROTECCIÓN (si no está logueado, regresa)
+if(localStorage.getItem("auth") !== "true") {
+    window.location.href = "login.html";
+}
+</script>
+
+<header>
+    <h1>🎮 Donde Juancho</h1>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="mostrarInicio()">Inicio</a></li>
+            <li><a href="#" onclick="filtrar('ps')">PS4/PS5</a></li>
+            <li><a href="#" onclick="filtrar('xbox')">Xbox</a></li>
+            <li><a href="#" onclick="filtrar('pc')">PC</a></li>
+            <li><a href="#" onclick="filtrar('nintendo')">Nintendo</a></li>
+            <li><a href="#" onclick="toggleCarrito()">Carrito 🛒</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- INTRO -->
+<section id="inicio">
+    <p><h2>¿Ya te fijaste en algo?</h2>
+
+<p>
+Bienvenido a Donde Juancho, tu tienda gamer favorita. 🎮🔥
+Aquí encontrarás aventuras épicas, mundos abiertos, shooters intensos y clásicos inolvidables.
+</p>
+
+<p>
+Sumérgete en una experiencia diseñada para gamers reales, rápida e intuitiva.
+</p>
+
+<h3>🎯 ¿Qué encontrarás aquí?</h3>
+<ul>
+  <li>Juegos organizados por plataforma</li>
+  <li>Ofertas exclusivas y descuentos</li>
+  <li>Recomendaciones personalizadas</li>
+  <li>Carrito fácil de usar</li>
+</ul>
+
+<h2>👤 Sobre Nosotros</h2>
+<p>
+En Donde Juancho, nacimos con una sola misión: llevar la pasión por los videojuegos a otro nivel.
+Somos una tienda creada por gamers, para gamers.
+</p>
+
+<h4>🚀 ¿Por qué elegirnos?</h4>
+<ul>
+  <li>Plataforma rápida</li>
+  <li>Amplia variedad</li>
+  <li>Precios competitivos</li>
+</ul>
+
+<h5>📩 Contáctanos</h5>
+<p>soporte@dondejuancho.com</p>
+</section>
+
+<!-- JUEGOS -->
+<section class="productos" id="lista-juegos"></section>
+
+<!-- CARRITO -->
+<div id="carrito" class="carrito oculto">
+    <h2>🛒 Facturación</h2>
+    <ul id="lista-carrito"></ul>
+    <p id="total"></p>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

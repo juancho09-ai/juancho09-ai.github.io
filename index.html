@@ -16,22 +16,27 @@ if(localStorage.getItem("auth") !== "true") {
 </script>
 
 <header>
-    <h1>🎮 Donde Juancho</h1>
-    <nav>
+    <div class="top-bar">
+        <span class="menu-btn" onclick="toggleMenu()">☰</span>
+        <h1>🎮 Donde Juancho</h1>
+        <span class="cart-btn" onclick="toggleCarrito()">🛒</span>
+    </div>
+
+    <nav id="menu" class="menu oculto">
         <ul>
-            <li><a href="#" onclick="mostrarInicio()">Inicio</a></li>
-            <li><a href="#" onclick="filtrar('ps')">PS4/PS5</a></li>
-            <li><a href="#" onclick="filtrar('xbox')">Xbox</a></li>
-            <li><a href="#" onclick="filtrar('pc')">PC</a></li>
-            <li><a href="#" onclick="filtrar('nintendo')">Nintendo</a></li>
-            <li><a href="#" onclick="toggleCarrito()">Carrito 🛒</a></li>
+            <li onclick="mostrarInicio()">Inicio</li>
+            <li onclick="filtrar('ps')">PS4/PS5</li>
+            <li onclick="filtrar('xbox')">Xbox</li>
+            <li onclick="filtrar('pc')">PC</li>
+            <li onclick="filtrar('nintendo')">Nintendo</li>
+            <li onclick="toggleCarrito()">🛒 Carrito</li>
         </ul>
     </nav>
 </header>
 
 <!-- INTRO -->
 <section id="inicio">
-    <p><h2>¿Ya te fijaste en algo?</h2>
+    <h2>¿Ya te fijaste en algo?</h2>
 
 <p>
 Bienvenido a Donde Juancho, tu tienda gamer favorita. 🎮🔥

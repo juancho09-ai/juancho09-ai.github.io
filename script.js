@@ -1,5 +1,4 @@
 const juegos = [
-    // 🎮 PLAYSTATION
     {nombre:"God of War (2018)", precio:50, plataforma:"ps"},
     {nombre:"God of War Ragnarök", precio:60, plataforma:"ps"},
     {nombre:"The Last of Us Part I", precio:50, plataforma:"ps"},
@@ -12,7 +11,6 @@ const juegos = [
     {nombre:"Horizon Forbidden West", precio:60, plataforma:"ps"},
     {nombre:"Helldivers 2", precio:50, plataforma:"ps"},
 
-    // 🟩 XBOX
     {nombre:"Red Dead Redemption 2", precio:60, plataforma:"xbox"},
     {nombre:"Elden Ring", precio:60, plataforma:"xbox"},
     {nombre:"The Witcher 3", precio:40, plataforma:"xbox"},
@@ -21,7 +19,6 @@ const juegos = [
     {nombre:"Resident Evil 4 Remake", precio:60, plataforma:"xbox"},
     {nombre:"Alan Wake 2", precio:60, plataforma:"xbox"},
 
-    // 💻 PC
     {nombre:"Baldur's Gate 3", precio:60, plataforma:"pc"},
     {nombre:"Disco Elysium", precio:40, plataforma:"pc"},
     {nombre:"Hades", precio:30, plataforma:"pc"},
@@ -31,14 +28,12 @@ const juegos = [
     {nombre:"Sekiro: Shadows Die Twice", precio:60, plataforma:"pc"},
     {nombre:"Minecraft", precio:30, plataforma:"pc"},
 
-    // 🟥 NINTENDO SWITCH
     {nombre:"Zelda: Breath of the Wild", precio:60, plataforma:"nintendo"},
     {nombre:"Zelda: Tears of the Kingdom", precio:70, plataforma:"nintendo"},
     {nombre:"Super Mario Odyssey", precio:55, plataforma:"nintendo"},
     {nombre:"Mario Kart 8 Deluxe", precio:50, plataforma:"nintendo"},
     {nombre:"Super Smash Bros Ultimate", precio:60, plataforma:"nintendo"},
 
-    // 🔁 MULTIPLATAFORMA (los ponemos en PC por simplicidad)
     {nombre:"Grand Theft Auto V", precio:40, plataforma:"pc"},
     {nombre:"Persona 5 Royal", precio:50, plataforma:"pc"},
     {nombre:"Final Fantasy VII Rebirth", precio:70, plataforma:"ps"}
@@ -58,12 +53,12 @@ function mostrarJuegos(filtro) {
         const div = document.createElement("div");
         div.classList.add("card");
 
-div.innerHTML = `
-    <img src="${juego.img}" alt="${juego.nombre}">
-    <h3>${juego.nombre}</h3>
-    <p>$${juego.precio}</p>
-    <button onclick="agregar('${juego.nombre}', ${juego.precio})">Agregar</button>
-`;
+        div.innerHTML = `
+            <img src="https://via.placeholder.com/300x200" alt="${juego.nombre}">
+            <h3>${juego.nombre}</h3>
+            <p>$${juego.precio}</p>
+            <button onclick="agregar('${juego.nombre}', ${juego.precio})">Agregar</button>
+        `;
 
         lista.appendChild(div);
     });
@@ -114,9 +109,14 @@ function actualizarCarrito() {
 }
 
 function toggleCarrito() {
-    document.getElementById("carrito").classList.toggle("oculto");
+    const carrito = document.getElementById("carrito");
+    carrito.classList.toggle("oculto");
 }
+
 function eliminar(index) {
     carrito.splice(index, 1);
     actualizarCarrito();
+}
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("oculto");
 }

@@ -6,7 +6,7 @@ body {
     overflow-x: hidden;
 }
 
-/* LOGIN */
+/* LOGIN (MEJORADO Y MÁS GRANDE) */
 .login-body {
     display: flex;
     justify-content: center;
@@ -14,11 +14,46 @@ body {
     height: 100vh;
 }
 
+/* CAJA MÁS GRANDE */
 .login-box {
     background: #1f1f1f;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 40px;              /* 🔥 más espacio interno */
+    border-radius: 15px;
     text-align: center;
+    width: 350px;               /* 🔥 ancho fijo */
+    box-shadow: 0 0 15px rgba(0,255,153,0.2); /* efecto gamer suave */
+}
+
+/* TÍTULO */
+.login-box h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* INPUTS MÁS GRANDES */
+.login-box input {
+    display: block;
+    width: 100%;
+    margin: 15px 0;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+}
+
+/* BOTÓN MÁS GRANDE */
+.login-box button {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* MENSAJE ERROR */
+#error {
+    margin-top: 10px;
+    color: red;
+    font-size: 14px;
 }
 
 input {
@@ -101,15 +136,21 @@ header {
     word-break: break-word;
 }
 
-/* BOTONES */
+/* BOTONES (MEJORADOS) */
 button {
     background: #00ff99;
-    border: none;
+    border: 2px solid black; /* 🔥 borde negro */
     padding: 8px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
-/* CARRITO (FIX TOTAL) */
+button:hover {
+    border-color: #00ffcc; /* 🔥 efecto gamer */
+    transform: scale(1.05);
+}
+
+/* CARRITO */
 .carrito {
     position: fixed;
     top: 0;
@@ -137,7 +178,6 @@ li {
 li button {
     background: red;
     color: white;
-    border: none;
 }
 
 /* TEXTO */
@@ -150,9 +190,8 @@ h2 {
     margin-top: 20px;
 }
 
-/* 📱 RESPONSIVE */
+/* RESPONSIVE */
 @media (max-width: 768px) {
-
     .productos {
         grid-template-columns: repeat(2, 1fr);
         padding: 10px;
@@ -169,4 +208,67 @@ h2 {
     .carrito {
         width: 100%;
     }
+}
+
+/* BOTÓN PAGAR */
+.btn-pagar {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+
+    position: sticky;
+    bottom: 10px;
+
+    border-radius: 10px;
+    background-color: #00ffcc;
+    color: black;
+}
+
+.btn-pagar:hover {
+    background-color: #00ccaa;
+}
+
+/* FACTURA */
+#factura {
+    margin-top: 30px;
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}
+
+/* MODAL */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.8);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 10000;
+}
+
+.modal.activo {
+    display: flex;
+}
+
+/* BOTONES MODAL */
+.modal-botones {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.modal-botones button {
+    width: 45%;
+    padding: 10px;
+    font-size: 16px;
 }

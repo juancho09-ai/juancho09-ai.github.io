@@ -9,7 +9,6 @@
 <body>
 
 <script>
-// PROTECCIÓN (si no está logueado, regresa)
 if(localStorage.getItem("auth") !== "true") {
     window.location.href = "login.html";
 }
@@ -18,7 +17,7 @@ if(localStorage.getItem("auth") !== "true") {
 <header>
     <div class="top-bar">
         <span class="menu-btn" onclick="toggleMenu()">☰</span>
-        <h1>🎮 Donde Juancho</h1>
+        <h1>🎮GamingHouse</h1>
         <span class="cart-btn" onclick="toggleCarrito()">🛒</span>
     </div>
 
@@ -29,18 +28,18 @@ if(localStorage.getItem("auth") !== "true") {
             <li onclick="filtrar('xbox')">Xbox</li>
             <li onclick="filtrar('pc')">PC</li>
             <li onclick="filtrar('nintendo')">Nintendo</li>
+            <li onclick="mostrarMisJuegos()">Mis Juegos</li>
             <li onclick="toggleCarrito()">🛒 Carrito</li>
         </ul>
     </nav>
 </header>
 
-<!-- INTRO -->
+<!-- INTRO (NO TOCADO) -->
 <section id="inicio">
-    <h2>¿Ya te fijaste en algo?</h2>
+<h2>¿Ya te fijaste en algo?</h2>
 
 <p>
-Bienvenido a Donde Juancho, tu tienda gamer favorita. 🎮🔥
-Aquí encontrarás aventuras épicas, mundos abiertos, shooters intensos y clásicos inolvidables.
+Bienvenido a Donde Juancho, tu tienda gamer favorita. 🎮🔥 Aquí encontrarás aventuras épicas, mundos abiertos, shooters intensos y clásicos inolvidables.
 </p>
 
 <p>
@@ -57,8 +56,7 @@ Sumérgete en una experiencia diseñada para gamers reales, rápida e intuitiva.
 
 <h2>👤 Sobre Nosotros</h2>
 <p>
-En Donde Juancho, nacimos con una sola misión: llevar la pasión por los videojuegos a otro nivel.
-Somos una tienda creada por gamers, para gamers.
+En Donde Juancho, nacimos con una sola misión: llevar la pasión por los videojuegos a otro nivel. Somos una tienda creada por gamers, para gamers.
 </p>
 
 <h4>🚀 ¿Por qué elegirnos?</h4>
@@ -80,6 +78,20 @@ Somos una tienda creada por gamers, para gamers.
     <h2>🛒 Facturación</h2>
     <ul id="lista-carrito"></ul>
     <p id="total"></p>
+
+    <!-- BOTON DENTRO DEL CARRITO -->
+    <button onclick="generarFactura()" class="btn-pagar">💳 Pagar</button>
+</div>
+
+<div id="factura"></div>
+
+<!-- MODAL (NUEVO) -->
+<div id="modal" class="modal oculto">
+    <div class="modal-botones">
+    <h2>¿Estás seguro de tu compra?</h2>
+    <button onclick="confirmarCompra()">✅ Sí</button>
+    <button onclick="cerrarModal()">❌ No</button>
+    </div>
 </div>
 
 <script src="script.js"></script>

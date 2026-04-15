@@ -21,7 +21,7 @@ function login() {
     const pass = document.getElementById("password").value;
 
     if(user === "Admin123" && pass === "Admin456") {
-        localStorage.setItem("auth", "true");
+       sessionStorage.setItem("auth", "true");
         window.location.href = "index.html";
     } else {
         document.getElementById("error").textContent = "Datos incorrectos";

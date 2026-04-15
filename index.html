@@ -9,7 +9,14 @@
 <body>
 
 <script>
-if(localStorage.getItem("auth") !== "true") {
+// Si NO está logueado → login
+if (!sessionStorage.getItem("auth")) {
+    window.location.href = "login.html";
+}
+
+// Si recarga la página → cerrar sesión
+if (performance.navigation.type === 1) {
+    sessionStorage.removeItem("auth");
     window.location.href = "login.html";
 }
 </script>

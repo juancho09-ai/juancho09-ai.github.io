@@ -82,8 +82,12 @@ function mostrarInicio() {
 
 // CARRITO
 function agregar(nombre, precio) {
-    carrito.push({nombre, precio});
+    const juego = juegos.find(j => j.nombre === nombre);
+    carrito.push(juego);
     actualizarCarrito();
+
+    // 🔥 ABRIR CARRITO AUTOMÁTICO
+    document.getElementById("carrito").classList.remove("oculto");
 }
 
 function actualizarCarrito() {
@@ -119,6 +123,11 @@ function toggleCarrito() {
 function eliminar(index) {
     carrito.splice(index, 1);
     actualizarCarrito();
+
+    // 🔥 SI QUEDA VACÍO → CERRAR
+    if (carrito.length === 0) {
+        document.getElementById("carrito").classList.add("oculto");
+    }
 }
 
 function toggleMenu() {
@@ -172,6 +181,33 @@ function mostrarMisJuegos() {
             <h3>${juego.nombre}</h3>
             <p>$${juego.precio}</p>
             <p>✅ Comprado</p>
+        `;
+
+        lista.appendChild(div);
+    });
+}
+function buscarJuego() {
+    const texto = document.getElementById("buscador").value.toLowerCase();
+
+    // 🔥 SI ESTÁ VACÍO → VOLVER AL INICIO
+    if (texto === "") {
+        mostrarInicio();
+        return;
+    }
+
+    lista.innerHTML = "";
+
+    juegos
+    .filter(j => j.nombre.toLowerCase().includes(texto))
+    .forEach(juego => {
+        const div = document.createElement("div");
+        div.classList.add("card");
+
+        div.innerHTML = `
+            <img src="${juego.imagen}" alt="${juego.nombre}">
+            <h3>${juego.nombre}</h3>
+            <p>$${juego.precio}</p>
+            <button onclick="agregar('${juego.nombre}', ${juego.precio})">Agregar</button>
         `;
 
         lista.appendChild(div);

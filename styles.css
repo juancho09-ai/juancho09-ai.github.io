@@ -272,3 +272,33 @@ h2 {
     padding: 10px;
     font-size: 16px;
 }
+.buscador {
+    width: 90%;
+    margin: 20px auto;
+    display: block;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* Mantiene el título centrado visualmente */
+.top-bar h1 {
+    flex: 1;
+    text-align: center;
+    margin: 0;
+}
+
+/* Buscador más compacto */
+.buscador-top {
+    width: 200px;
+    padding: 6px;
+    border-radius: 10px;
+    border: 2px solid black;
+}

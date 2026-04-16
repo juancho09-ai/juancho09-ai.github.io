@@ -22,11 +22,22 @@ if (performance.navigation.type === 1) {
 </script>
 
 <header>
-    <div class="top-bar">
-        <span class="menu-btn" onclick="toggleMenu()">☰</span>
-        <h1>🎮GamingHouse</h1>
-        <span class="cart-btn" onclick="toggleCarrito()">🛒</span>
-    </div>
+   <div class="top-bar">
+    <span class="menu-btn" onclick="toggleMenu()">☰</span>
+
+    <h1>🎮 Donde Juancho</h1>
+
+    <input 
+        type="text" 
+        id="buscador" 
+        placeholder="🔎 Buscar..."
+        onkeyup="buscarJuego()"
+        class="buscador-top"
+    >
+
+    <span class="cart-btn" onclick="toggleCarrito()">🛒</span>
+</div>
+    
 
     <nav id="menu" class="menu oculto">
         <ul>
